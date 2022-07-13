@@ -66,7 +66,9 @@
       if (root == null) return;
       inorder(root.left);
       // business logic
-      if(prev != null && root.val < prev.val)
+      // BST inorder return in asc order , so in asc order if we find a no is greater than next which violates the BST structure
+      // thats why we have condition if prev.val >= root.val
+      if (prev != null && root.val < prev.val)
       {
         if (first == null) first = prev;
         second = root;
